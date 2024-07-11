@@ -1,7 +1,6 @@
 {
   "name": "image-test",
   "version": "0.1.0",
-  "homepage": "https://addit.menteimo.com/image-recognition-app",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
