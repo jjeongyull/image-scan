@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# 이미지 분석 프로그램
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 문서는 이미지 분석 및 번역 프로그램에 대한 설명입니다. 이 프로그램은 사용자가 이미지를 업로드하거나 사진을 찍어서 텍스트를 인식하고, Google Vision API를 사용하여 텍스트를 추출하며, Google 번역 API를 이용하여 추출된 영어 텍스트를 한글로 번역하여 보여줍니다.
 
-## Available Scripts
+## 사용된 라이브러리
 
-In the project directory, you can run:
+- `@chakra-ui/react`: UI 컴포넌트 라이브러리
+- `@emotion/react`, `@emotion/styled`: Emotion을 사용한 CSS-in-JS 라이브러리
+- `axios`: HTTP 클라이언트 라이브러리
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 기능 설명
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 이미지 업로드 및 텍스트 분석
 
-### `npm test`
+1. **이미지 업로드**: 사용자는 버튼을 클릭하여 이미지를 업로드할 수 있습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+2. **이미지 분석**: 이미지가 업로드되면, 프로그램은 Google Vision API를 호출하여 이미지에서 텍스트를 인식합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 번역 결과 표시
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **원본 텍스트**: 이미지에서 추출된 원본 텍스트가 표시됩니다.
 
-### `npm run eject`
+2. **번역된 텍스트**: 추출된 영어 텍스트는 Google 번역 API를 통해 한글로 번역되어 표시됩니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 에러 처리
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **파일 크기 초과**: 선택한 이미지가 최대 파일 크기를 초과하면 오류 메시지가 표시됩니다.
